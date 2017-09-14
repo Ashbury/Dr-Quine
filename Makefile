@@ -17,8 +17,7 @@ GENERATED_FILES =	$(MANDATORY_DIR)/Grace/Grace_kid.c \
 					$(BONUSES_DIR)/Grace/Grace.o \
 					$(BONUSES_DIR)/Grace/Grace_kid.s \
 					$(BONUSES_DIR)/Sully/Sully.o \
-					$(BONUSES_DIR)/Sully/Sully_*.o \
-					$(BONUSES_DIR)/Sully/Sully_*.s					
+					$(BONUSES_DIR)/Sully/Sully_*					
 
 all: $(BINARIES)
 
@@ -30,8 +29,8 @@ $(BINARIES):
 	ld -lSystem -macosx_version_min 12.10 -o $(BONUSES_DIR)/Colleen/Colleen $(BONUSES_DIR)/Colleen/Colleen.o
 	nasm -f macho64 -o $(BONUSES_DIR)/Grace/Grace.o $(BONUSES_DIR)/Grace/Grace.s
 	ld -lSystem -macosx_version_min 12.10 -o $(BONUSES_DIR)/Grace/Grace $(BONUSES_DIR)/Grace/Grace.o
-	# nasm -f macho64 -o $(BONUSES_DIR)/Sully/Sully.o $(BONUSES_DIR)/Sully/Sully.s
-	# ld -lSystem -macosx_version_min 12.10 -o $(BONUSES_DIR)/Sully/Sully $(BONUSES_DIR)/Sully/Sully.o
+	nasm -f macho64 -o $(BONUSES_DIR)/Sully/Sully.o $(BONUSES_DIR)/Sully/Sully.s
+	ld -lSystem -macosx_version_min 12.10 -o $(BONUSES_DIR)/Sully/Sully $(BONUSES_DIR)/Sully/Sully.o
 
 clean:
 	rm -f $(GENERATED_FILES)
