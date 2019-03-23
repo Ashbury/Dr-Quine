@@ -1,6 +1,6 @@
-; Did you like C ? You will LOVE ASM !
+; Did you like C? You will LOVE ASM!
 section .data
-string db "%c Did you like C ? You will LOVE ASM !%csection .data%cstring db %c%s%c%csection .text%cextern _printf%cglobal _start%cglobal _main%c_start:%c_main:%cpush rbp%cmov rbp, rsp%cmov rcx, 30%cstack_setup:%cpush 10%cdec rcx%ccmp rcx, 0%cje done%cjmp stack_setup%cdone:%cadd dword [rsp], 24 %c Dark arts at work here%cadd dword [rsp + 144], 49%clea rdi, [rel string]%cmov rsi, 59%cmov rdx, 10%cmov rcx, 10%cmov r8, 34%clea r9, [rel string]%ccall _printf%cmov rsp, rbp%cleave%cret"
+string db "%c Did you like C? You will LOVE ASM!%csection .data%cstring db %c%s%c%csection .text%cextern _printf%cglobal _start%cglobal _main%c_start:%c_main:%cpush rbp%cmov rbp, rsp%cmov rcx, 30%cstack_setup:%cpush 10%cdec rcx%ccmp rcx, 0%cje done%cjmp stack_setup%cdone:%cadd dword [rsp], 24 %c Dark arts at work here%cadd dword [rsp + 144], 49%clea rdi, [rel string]%cmov rsi, 59%cmov rdx, 10%cmov rcx, 10%cmov r8, 34%clea r9, [rel string]%ccall _printf%cmov rsp, rbp%cleave%cret"
 section .text
 extern _printf
 global _start
